@@ -48,6 +48,7 @@ public class SlideAnimationThenCallLayout extends Activity implements AnimationL
 
             anim.setDuration(500);
             anim.setAnimationListener(me);
+            anim.setFillAfter(true);
 
             // Only use fillEnabled and fillAfter if we don't call layout ourselves.
             // We need to do the layout ourselves and not use fillEnabled and fillAfter because when the anim is finished
@@ -82,6 +83,7 @@ public class SlideAnimationThenCallLayout extends Activity implements AnimationL
         System.out.println("layout [" + animParams.left + "," + animParams.top + "," + animParams.right + ","
                 + animParams.bottom + "]");
         app.layout(animParams.left, animParams.top, animParams.right, animParams.bottom);
+        app.clearAnimation();
     }
 
     @Override
